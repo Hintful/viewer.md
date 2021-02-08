@@ -41,7 +41,7 @@ class Markdown extends React.Component {
             <textarea id="editor" value={this.state.input} onChange={this.handleChange} />
           </div>
           <div className="viewer-div" id="preview-div">
-            <span class="div-desc"><i class="far fa-eye"></i>Viewer</span>
+            <div class="div-desc"><i class="far fa-eye"></i>Viewer</div>
             { /* <div dangerouslySetInnerHTML={
         { __html: DOMPurify.sanitize(marked(this.state.input, { gfm: true })) }
       } /> */ }
