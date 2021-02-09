@@ -5,8 +5,11 @@ import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import dompurify from 'dompurify';
 import marked from 'marked';
+import ReactGA from 'react-ga';
 
 const TITLE = "viewer.md";
+
+ReactGA.initialize("G-D3Z7LQS3WW");
 
 class Render extends React.Component {
   render() {
@@ -23,6 +26,9 @@ class Markdown extends React.Component {
       input: "# Test  \n## Test  \n`Code test`  \n* Item 1\n* Item 2\n* Item 3  \n\n```python\ndef codeblock:\n  return true\n```  \n\n[Link](https://kurtchoi.dev)  \n> Blockquote  \n\n**Bold Text**  \n\n*Italics*  \n\n![Markdown](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/175px-Markdown-mark.svg.png)"
     }
     this.handleChange = this.handleChange.bind(this);
+  }
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
   handleChange(event) {
     this.setState({ input: event.target.value });
