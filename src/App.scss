@@ -1,7 +1,7 @@
 @import url("https://use.fontawesome.com/d0c316cf02.js");
 @import url("https://cdn.jsdelivr.net/npm/marked/marked.js");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+JP&family=Hammersmith+One&family=Playfair+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+JP&family=Montserrat:wght@500&family=Hammersmith+One&family=Playfair+Display:wght@500&display=swap");
 
 body {
   margin: 0 40px 0 40px;
@@ -90,4 +90,14 @@ body {
     font-weight: 700;
   }
 }
-
+.credit {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 10px;
+  
+  a:link, a:visited{
+    color: black;
+  }
+}
