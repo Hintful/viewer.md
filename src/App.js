@@ -54,8 +54,8 @@ class Markdown extends React.Component {
             <Render className="render" markdown={marked(this.state.input, {gfm: true, breaks: true})} />
           </div>
         </div>
-        <div className="credit">
-          Coded and designed by <a href="https://kurtchoi.dev" target="_blank">Kurt Choi</a>
+        <div class="credit">
+          Coded and designed by <u>Kurt Choi</u>
         </div>
       </div>
     )
