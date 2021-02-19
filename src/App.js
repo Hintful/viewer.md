@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import dompurify from 'dompurify';
@@ -9,7 +9,17 @@ import ReactGA from 'react-ga';
 
 const TITLE = "viewer.md";
 
-ReactGA.initialize("G-D3Z7LQS3WW");
+function usePageViews() {
+  useEffect(() => {
+    if(!window.GA_INIT) {
+      ReactGA.initialize("UA-186165133-1");
+      window.GA_INIT = true;
+    }
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+}
+
 
 class Render extends React.Component {
   render() {
@@ -27,9 +37,7 @@ class Markdown extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
   }
-  componentDidMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
+
   handleChange(event) {
     this.setState({ input: event.target.value });
   }
@@ -65,6 +73,8 @@ class Markdown extends React.Component {
 
 
 function App() {
+  usePageViews();
+
   return (
     <div className="App">
       <Helmet>
